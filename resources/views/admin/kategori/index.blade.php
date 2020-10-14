@@ -52,25 +52,25 @@
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Salary</th>
+                                            <th>#</th>
+                                            <th>Nama Kategori</th>
+                                            <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        <tr>
+                                        @foreach($data as $i=>$row)
+                                            <tr>
+                                                <td>{{++$i}}</td>
+                                                <td>{{$row->NamaKategori}}</td>
+                                                <td>{{$row->StatusKategori}}</td>
+                                            </tr>
+                                        @endforeach
+
+                                        <!-- <tr>
                                             <td>Garrett Winters</td>
                                             <td>Accountant</td>
                                             <td>Tokyo</td>
-                                            <td>$170,750</td>
-                                        </tr>
+                                        </tr> -->
                                         
                                     </tbody>
                                 </table>
