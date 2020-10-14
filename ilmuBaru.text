@@ -1,0 +1,16 @@
+php -S 127.0.0.1:8000 -t public public/index.php
+
+php -S 127.0.0.1:8000 -t public server.php
+
+
+server.php
+if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri) && !is_dir(__DIR__.'/public'.$uri)) {
+    return false;
+}
+
+penjelasan
+1. Si PHP baca return value dari executed script.
+2. Kalau false, dia merujuk ke file berdasarkan URI.
+3. Kalau true, dia override pagenya.
+Nah, di sini jadi bug karena si Laravel nggak ngecek kalau itu folder, tahunya cuma file_exists.
+Nah makanya ditambahin rule nih, is not dir.
