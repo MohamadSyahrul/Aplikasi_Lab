@@ -32,7 +32,7 @@
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
                             <li><a href="#">Table</a></li>
-                            <li class="active">Data Kategori</li>
+                            <li class="active">Data Tugas</li>
                         </ol>
                     </div>
                 </div>
@@ -46,23 +46,27 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <strong class="card-title">Data Kategori</strong>
+                                <strong class="card-title">Data Tugas</strong>
                             </div>
                             <div class="card-body">
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Nama Kategori</th>
-                                            <th>Status</th>
+                                            <th>Nama Tugas</th>
+                                            <th>Id Kategori</th>
+                                            <th>Keterangan Tugas</th>
+                                            <th>Status Tugas</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($data as $i=>$row)
                                             <tr>
                                                 <td>{{++$i}}</td>
-                                                <td>{{$row->NamaKategori}}</td>
-                                                <td>{{$row->StatusKategori}}</td>
+                                                <td>{{$row->Nama_tugas}}</td>
+                                                <td>{{$row->id_kategori}}</td>
+                                                <td>{{$row->Ket_tugas}}</td>
+                                                <td>{{$row->Status_tugas}}</td>
                                             </tr>
                                         @endforeach
 
