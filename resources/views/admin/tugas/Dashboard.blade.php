@@ -4,7 +4,7 @@
 
     <link rel="apple-touch-icon" href="apple-icon.png">
     <link rel="shortcut icon" href="favicon.ico">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="{{ asset('admin/vendors/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{ asset('admin/vendors/font-awesome/css/font-awesome.min.css')}}">
@@ -47,8 +47,21 @@
                         <div class="card">
                             <div class="card-header">
                                 <strong class="card-title">Data Tugas</strong>
+                                    <a href="{{ route('tugas.create') }}" class="btn btn-success btn-sm float-right">
+                                        <i class="fa fa-plus"></i>Add
+                                    </a>
                             </div>
                             <div class="card-body">
+                            @if (session('status'))
+                            <div class="alert alert-success">
+                                {{ session('status') }}
+                            </div>
+                            @endif
+                            @if (session('hapus'))
+                                <div class="alert alert-danger">
+                                    {{ session('hapus') }}
+                                </div>
+                            @endif
                                 <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                                     <thead>
                                         <tr>
@@ -57,6 +70,8 @@
                                             <th>Id Kategori</th>
                                             <th>Keterangan Tugas</th>
                                             <th>Status Tugas</th>
+                                            <th>Update</th>
+                                            <th>Hapus</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -67,6 +82,21 @@
                                                 <td>{{$row->id_kategori}}</td>
                                                 <td>{{$row->Ket_tugas}}</td>
                                                 <td>{{$row->Status_tugas}}</td>
+                                                <td class="text-center">
+                                                    <a href="{{ route('tugas.edit', $row->id)}}" class="btn btn-primary btn-sm rounded">
+                                                    <i class="fa fa-edit"></i>
+                                                    Edit 
+                                                    </a>
+                                                </td>
+                                                <td class="text-center">
+                                                    <form action="{{route('tugas.destroy' , $row->id)}}" method="post" class="d-inline" onsubmit="return confirm('Yakin hapus data ?')">
+                                                        @method('delete')
+                                                        @csrf
+                                                        <button class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-trash"></i> Hapus 
+                                                        </button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         @endforeach
 
