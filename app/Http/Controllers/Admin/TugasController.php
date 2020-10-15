@@ -13,4 +13,8 @@ class TugasController extends Controller
         $data=Task::all();
         return view('admin.tugas.Dashboard', compact('data'));
     }
+    public function create()
+    {
+        return view('admin.tugas.create');
+    }
 }
