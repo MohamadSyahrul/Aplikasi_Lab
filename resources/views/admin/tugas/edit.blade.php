@@ -90,6 +90,10 @@
                         </div>
                     </div>
                 </div>
+                {{-- <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class="form-control-label">Sahrul Tugas</label></div>
+                    <div class="col-12 col-md-9"><input type="text" id="text-input" name="sahrulTugas_tugas" placeholder="Sahrul Tugas" class="form-control" /><small class="form-text text-muted">This is a help keterangan tugas</small></div>
+                </div> --}}
         <!-- <div class="card-footer"> -->
             <button type="submit" class="btn btn-primary btn-sm"><i class="fa fa-dot-circle-o"></i> Update</button>
             <button type="reset" class="btn btn-danger btn-sm"><i class="fa fa-ban"></i> Reset</button>

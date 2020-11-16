@@ -70,6 +70,7 @@
                                             <th>Id Kategori</th>
                                             <th>Keterangan Tugas</th>
                                             <th>Status Tugas</th>
+                                            <!-- <th>Sahrul Tugas</th> -->
                                             <th>Update</th>
                                             <th>Hapus</th>
                                         </tr>

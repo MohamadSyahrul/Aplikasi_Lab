@@ -27,6 +27,7 @@ class TugasController extends Controller
             'optionid_kategori'=>'required',
             'ketKet_tugas'=>'required',
             'radioStatus_tugas'=>'required',
+
         ]);
 
         $data_tugas = new Task([
