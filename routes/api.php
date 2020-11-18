@@ -20,3 +20,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('register','Api\Auth\AuthController@register');
 Route::post('login','Api\Auth\AuthController@login');
+
+Route::group(['prefix' => 'tugas'], function () {
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::get('get_all', 'Api\Tugas\TugasController@getAll');
+        Route::post('tambah', 'Api\Tugas\TugasController@store');
+        Route::post('update', 'Api\Tugas\TugasController@update');
+        Route::post('delete', 'Api\Tugas\TugasController@destroy');
+
+    });
+});

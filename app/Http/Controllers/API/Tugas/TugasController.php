@@ -44,7 +44,7 @@ class TugasController extends Controller
             'Ket_tugas' => 'required',
             'Status_tugas' => 'required',
         ]);
-        $data = Task::whare('id','=',$request->id)->first();
+        $data = Task::where('id','=',$request->id)->first();
         $data->id = $request->id;
         $data->Nama_tugas = $request->Nama_tugas;
         $data->id_kategori = $request->id_kategori;
@@ -55,7 +55,7 @@ class TugasController extends Controller
         return response()->json($data, 201);
     }
     public function destroy(Request $request){
-        $data = Task::whare('id','=',$request->id)->first();
+        $data = Task::where('id','=',$request->id)->first();
 
         if(!empty($data)){
             $data->delete();
