@@ -28,5 +28,9 @@ Route::group(['prefix' => 'tugas'], function () {
         Route::post('update', 'Api\Tugas\TugasController@update');
         Route::post('delete', 'Api\Tugas\TugasController@destroy');
 
+        Route::post('create', 'Api\Tugas\MenuController@store');
+        Route::post('edit', 'Api\Tugas\MenuController@update');
+        Route::post('hapus', 'Api\Tugas\MenuController@destroy');
+
     });
 });
